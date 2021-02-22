@@ -1,0 +1,98 @@
+:root{
+    --color-pricipal : #000000;
+    --color-secundario:  rgba(187,187, 187);
+    --color-background:  rgb(0 0 0 / 50%);
+}
+
+.body{
+    background-color:var(--color-secundario);
+    /*
+    
+    */
+}
+
+.error{
+    color: red !important;
+}
+
+.fondo{
+    background-image: url(../img/fodo.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:cover;
+}
+
+
+a,p,label,.card-title,h1,h2,h3,h5,h6{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: aliceblue !important;
+}
+
+.img-clothes{
+    width: 250px;
+    height: 250px;
+    border-radius: 15px;
+    margin: 1rem auto;
+}
+
+.card{
+    border-radius: 15px;
+    background-color: var(--color-pricipal)!important;
+}
+
+section{
+    border-radius: 15px;
+    background-color: var(--color-background)!important;
+}
+
+
+.border{
+    border-color: var(--color-pricipal) !important;
+}
+
+.login{
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 70%;
+    background-color: var(--color-background) !important;
+}
+
+.contacto{
+    margin: auto auto !important;
+    width: 40%;
+    background-color:var(--color-background) !important;
+}
+
+.titleCard{
+    border-radius: 20px;
+    background-color: var(--color-pricipal);
+    margin-left: auto !important;
+    margin-right: auto !important;
+    height: 10%;
+}
+
+.img-login{
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+}
+
+.btn-principal{
+    color: var(--color-secundario);
+    background-color: var(--color-pricipal);
+    border-color: var(--color-pricipal);
+}
+
+.publicity{
+    width: 650px;
+    height: 350px;
+}
+
+#publicidad{
+    margin-left: auto !important; 
+    margin-right: auto !important;
+    width: 80% !important;
+    height: 30% !important;
+}
