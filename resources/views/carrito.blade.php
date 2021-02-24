@@ -9,8 +9,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="<?php echo asset('css/style.css') ?>" type="text/css">
     <style>
-        table{
+        table {
             color: white !important;
+            text-align: center;
         }
     </style>
 </head>
@@ -23,7 +24,7 @@
             <a id="hlogin" class="nav-link" href="/login">Incio de Sesión</a>
             <a class="nav-link" href="/carrito">Carrito de Compras</a>
             <a class="nav-link" href="/contacto">Contactenos</a>
-            <a class="nav-link" style="float:right;" onclick="cerrar()">Cerrar Sesión</a>
+            <a id="hcerrar" style="display: none;" class="nav-link" href="javascript:cerrar()">Cerrar Sesión</a>
         </nav>
     </header>
     <main>
@@ -45,7 +46,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                
+
                             </tbody>
                         </table>
                     </div>
@@ -57,6 +58,18 @@
             </div>
         </div>
     </main>
+    <div class="modal" id="cargando" tabindex="-1" role="dialog" data-backdrop="static">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body text-center">
+                    <b>Cargando...</b><br />
+                    <div class="spinner-border m-5" role="status">
+                        <span class="sr-only"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>

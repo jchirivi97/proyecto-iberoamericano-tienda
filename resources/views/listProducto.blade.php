@@ -15,7 +15,7 @@
         <nav class="nav nav-dark bg-dark">
             <a class="nav-link " href="/admin">Inicio</a>
             <a class="nav-link" href="/listProd">Productos</a>
-            <a class="nav-link" style="float:right;" onclick="cerrar()">Cerrar Sesión</a>
+            <a id="hcerrar" style="display: none;" class="nav-link" href="javascript:cerrar()">Cerrar Sesión</a>
         </nav>
     </header>
     <main>
@@ -28,8 +28,8 @@
                     <button class="btn btn-warning" onclick="crearProducto()">Crear Producto</button>
                 </div>
                 <div class="table-responsive-md">
-                    <table class="table table-light">
-                        <thead>
+                    <table class="table">
+                        <thead class="thead-dark">
                             <tr>
                                 <th scope="col">#</th>
                                 <th scope="col">Codigo</th>
@@ -49,7 +49,18 @@
             </section>
 
         </div>
-
+        <div class="modal" id="cargando" tabindex="-1" role="dialog" data-backdrop="static">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-body text-center">
+                        <b>Cargando...</b><br />
+                        <div class="spinner-border m-5" role="status">
+                            <span class="sr-only"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

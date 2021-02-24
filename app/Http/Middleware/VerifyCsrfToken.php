@@ -20,6 +20,9 @@ class VerifyCsrfToken extends Middleware
         '/updateProduct',
         '/updateProductImg',
         '/saveFactura',
-        '/saveDetalle'
+        '/saveDetalle',
+        '/totalVentas',
+        '/updProductCant',
+        '/getFacturaUser/{nickname}'
     ];
 }

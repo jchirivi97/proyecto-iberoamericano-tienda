@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\DetalleFactura;
+use App\Models\Contacto;
 use Illuminate\Http\Request;
-use App\Http\Controllers\ProductoController;
 
-class DetalleFactController extends Controller
+class ContactoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -36,25 +35,16 @@ class DetalleFactController extends Controller
      */
     public function store(Request $request)
     {
-        foreach($request->compras as $item){
-            
-            $detalle= DetalleFactura::firstOrNew(array(
-                'cantidad'=>$item['cantidad'],
-                'producto'=>$item['codigo'],
-                'factura'=>$request->factura
-            ));
-            $detalle->save();
-        }
-        return array("ESTADO"=>"OK");
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\DetalleFactura  $detalleFactura
+     * @param  \App\Models\Contacto  $contacto
      * @return \Illuminate\Http\Response
      */
-    public function show(DetalleFactura $detalleFactura)
+    public function show(Contacto $contacto)
     {
         //
     }
@@ -62,10 +52,10 @@ class DetalleFactController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\DetalleFactura  $detalleFactura
+     * @param  \App\Models\Contacto  $contacto
      * @return \Illuminate\Http\Response
      */
-    public function edit(DetalleFactura $detalleFactura)
+    public function edit(Contacto $contacto)
     {
         //
     }
@@ -74,10 +64,10 @@ class DetalleFactController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\DetalleFactura  $detalleFactura
+     * @param  \App\Models\Contacto  $contacto
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, DetalleFactura $detalleFactura)
+    public function update(Request $request, Contacto $contacto)
     {
         //
     }
@@ -85,10 +75,10 @@ class DetalleFactController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\DetalleFactura  $detalleFactura
+     * @param  \App\Models\Contacto  $contacto
      * @return \Illuminate\Http\Response
      */
-    public function destroy(DetalleFactura $detalleFactura)
+    public function destroy(Contacto $contacto)
     {
         //
     }

@@ -8,28 +8,30 @@ $(window).on("load", function () {
 
     if (localStorage.getItem("session") == 1) {
         $("#hlogin").hide();
+        $("#hcerrar").show();
     } else {
         $("#hlogin").show();
+        $("#hcerrar").hide();
     }
 });
 
 function login() {
-    Swal.fire({
-        icon: 'success',
-        html:
-            '<b>Cargando...</b><br/>'+
-            '<div class="spinner-border m-5" role="status">' +
-            '<span class="sr-only"></span></div>',
-        timer: 5000,
-        showConfirmButton: false,
-        allowOutsideClick: false
-    })
     $.ajax({
         type: "GET",
         url: "userLogin/" + $("#user").val() + "/" + $("#password").val(),
         data: {},
+        xhr: function() {
+            var xhr = $.ajaxSettings.xhr();
+            $("#cargando").modal("show")
+            xhr.upload.onprogress = function(e) {
+                if (e.lengthComputable) {
+                    $("#progresar").text("Por favor espere... " + parseInt((e.loaded / e.total) * 100))
+                }
+            };
+            return xhr;
+        },
         success: function (resp) {
-            console.log("login: "+resp)
+            $("#cargando").modal("hide")
             if (resp[resp.length - 1].ESTADO == "OK") {
                 localStorage.setItem("session", 1);
                 localStorage.setItem("user",resp[0][0].nickname)

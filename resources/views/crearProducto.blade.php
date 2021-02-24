@@ -13,7 +13,7 @@
         <nav class="nav nav-dark bg-dark">
             <a class="nav-link " href="/admin">Inicio</a>
             <a class="nav-link" href="/listProd">Productos</a>
-			<a class="nav-link" style="float:right;" onclick="cerrar()">Cerrar Sesión</a>
+			<a id="hcerrar" style="display: none;" class="nav-link" href="javascript:cerrar()">Cerrar Sesión</a>
         </nav>
     </header>
     <main>
@@ -62,6 +62,18 @@
             </div>
         </div>
     </main>
+    <div class="modal" id="cargando" tabindex="-1" role="dialog" data-backdrop="static">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body text-center">
+                    <b>Cargando...</b><br />
+                    <div class="spinner-border m-5" role="status">
+                        <span class="sr-only"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>

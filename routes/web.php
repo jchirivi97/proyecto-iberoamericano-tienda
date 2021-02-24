@@ -68,6 +68,10 @@ Route::put('/updateProductImg','App\Http\Controllers\ProductoController@updateIm
 Route::post('/saveProduct','App\Http\Controllers\ProductoController@store');
 Route::get('/deleteProducto/{codigo}','App\Http\Controllers\ProductoController@destroy');
 Route::get('/getProduct/{codigo}','App\Http\Controllers\ProductoController@getProducto');
+Route::put('/updProductCant','App\Http\Controllers\ProductoController@updateCantidad');
 Route::post('/saveFactura','App\Http\Controllers\FacturaController@store');
+Route::get('/totalVentas','App\Http\Controllers\FacturaController@getTotalVenta');
+Route::get('/getFacturaUser/{nickname}','App\Http\Controllers\FacturaController@getFacturaUser');
 Route::post('/saveDetalle','App\Http\Controllers\DetalleFactController@store');
+
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Factura;
+use App\Models\Producto;
 use Illuminate\Http\Request;
 
 class FacturaController extends Controller
@@ -17,16 +18,19 @@ class FacturaController extends Controller
         //
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+    public function getTotalVenta(){
+        $total=0;
+        $venta= Factura::all();
+        foreach($venta as $item){
+            $total += $item['total'];
+        }
+        return $total;
     }
 
+    public function getFacturaUser($user){
+        $facturas = Factura::where('usuario',"=",$user)->get();
+        return $facturas;
+    }
     /**
      * Store a newly created resource in storage.
      *

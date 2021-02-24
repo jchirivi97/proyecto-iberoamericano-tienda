@@ -56,7 +56,18 @@ function saveProducto(){
                 data: data,
                 processData: false,
                 contentType: false,
+                xhr: function() {
+                    var xhr = $.ajaxSettings.xhr();
+                    $("#cargando").modal("show")
+                    xhr.upload.onprogress = function(e) {
+                        if (e.lengthComputable) {
+                            $("#progresar").text("Por favor espere... " + parseInt((e.loaded / e.total) * 100))
+                        }
+                    };
+                    return xhr;
+                },
                 success:function(resp){
+                    $("#cargando").modal("hide")
                     if(resp.ESTADO == "OK"){
                         Swal.fire({
                             icon: 'success',
@@ -119,7 +130,18 @@ $("#codigo").change(function(){
         type: 'GET',
         url: 'getProduct/'+$("#codigo").val(),
         data: {},
+        xhr: function() {
+            var xhr = $.ajaxSettings.xhr();
+            $("#cargando").modal("show")
+            xhr.upload.onprogress = function(e) {
+                if (e.lengthComputable) {
+                    $("#progresar").text("Por favor espere... " + parseInt((e.loaded / e.total) * 100))
+                }
+            };
+            return xhr;
+        },
         success: function(resp){
+            $("#cargando").modal("hide")
             if(resp.length >= 1){
                 Swal.fire({
                     icon: 'error',

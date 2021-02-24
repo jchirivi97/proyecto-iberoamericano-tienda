@@ -71,6 +71,11 @@ section{
     height: 10%;
 }
 
+table {
+    color: white !important;
+    text-align: center;
+}
+
 .img-login{
     margin-left: auto;
     margin-right: auto;

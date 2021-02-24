@@ -8,18 +8,33 @@ use Illuminate\Http\Request;
 class ProductoController extends Controller
 {
 
-    public function allProducts(){
+    public function allProducts()
+    {
         $product = Producto::all();
         return $product;
     }
 
-    public function getProducto($codigo){
+    public function getProducto($codigo)
+    {
 
-        $product = Producto::where('codigo','=',$codigo)->get();
+        $product = Producto::where('codigo', '=', $codigo)->get();
         return $product;
     }
 
-    
+    public function updateCantidad(Request $request)
+    {
+        foreach ($request->compras as $item) {
+            $product = $this->getProducto($item["codigo"]);
+            $cantidadTol = $product[0]["disponible"] - $item["cantidad"];
+            $prod = Producto::where('codigo', '=', $item["codigo"])
+                ->update(array(
+                    'disponible' => $cantidadTol,
+                ));
+        }
+        return array("ESTADO" => "OK");
+    }
+
+
     /**
      * Store a newly created resource in storage.
      *
@@ -30,23 +45,23 @@ class ProductoController extends Controller
     {
         $base_to_php = explode(',', $request->url);
         $data = base64_decode($base_to_php[1]);
-        
-        $ruta = 'img/productos/'.$request->codigo.'.png';
+
+        $ruta = 'img/productos/' . $request->codigo . '.png';
         file_put_contents($ruta, $data);
-        
+
         $product = Producto::create(array(
-            'codigo'=>$request->codigo,
-            'nombre'=>$request->nombre,
-            'descripcion'=>$request->descripcion,
-            'valor'=>$request->valor,
-            'disponible'=>$request->disponible,
-            'imagen'=>$ruta,
-            'categoria'=>$request->categoria
+            'codigo' => $request->codigo,
+            'nombre' => $request->nombre,
+            'descripcion' => $request->descripcion,
+            'valor' => $request->valor,
+            'disponible' => $request->disponible,
+            'imagen' => $ruta,
+            'categoria' => $request->categoria
         ));
-        return array("ESTADO"=>"OK");
+        return array("ESTADO" => "OK");
     }
 
-    
+
     /**
      * Update the specified resource in storage.
      *
@@ -54,36 +69,38 @@ class ProductoController extends Controller
      * @param  \App\Models\Producto  $producto
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request){
-        $product = Producto::where('codigo','=',$request->codigo)
-                ->update(array(
-                    'codigo'=>$request->codigo,
-                    'nombre'=>$request->nombre,
-                    'descripcion'=>$request->descripcion,
-                    'valor'=>$request->valor,
-                    'disponible'=>$request->disponible,
-                    'categoria'=>$request->categoria
-                ));
-        return array("ESTADO"=>"OK");
+    public function update(Request $request)
+    {
+        $product = Producto::where('codigo', '=', $request->codigo)
+            ->update(array(
+                'codigo' => $request->codigo,
+                'nombre' => $request->nombre,
+                'descripcion' => $request->descripcion,
+                'valor' => $request->valor,
+                'disponible' => $request->disponible,
+                'categoria' => $request->categoria
+            ));
+        return array("ESTADO" => "OK");
     }
 
     /**
      * 
      */
-    public function updateImg(Request $request){
-        if($request->url != "url"){
+    public function updateImg(Request $request)
+    {
+        if ($request->url != "url") {
             $base_to_php = explode(',', $request->url);
-            $data = base64_decode($base_to_php[1]);            
-            $ruta = 'img/productos/'.$request->codigo.'.png';
+            $data = base64_decode($base_to_php[1]);
+            $ruta = 'img/productos/' . $request->codigo . '.png';
             file_put_contents($ruta, $data);
-        }else{
+        } else {
             $ruta = $request->imagen;
         }
-        $product = Producto::where('codigo','=',$request->codigo)
-                ->update(array(
-                    'imagen'=> $ruta
-                ));
-        return array("ESTADO"=>"OK");
+        $product = Producto::where('codigo', '=', $request->codigo)
+            ->update(array(
+                'imagen' => $ruta
+            ));
+        return array("ESTADO" => "OK");
     }
 
     /**
@@ -94,7 +111,7 @@ class ProductoController extends Controller
      */
     public function destroy($producto)
     {
-        $product = Producto::where('codigo','=',$producto)->delete();
-        return array("ESTADO"=>"OK");
+        $product = Producto::where('codigo', '=', $producto)->delete();
+        return array("ESTADO" => "OK");
     }
 }

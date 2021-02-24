@@ -2,16 +2,6 @@ var compras;
 var prod;
 $(window).on("load", function () {
     compras=JSON.parse(localStorage.getItem('compras'));
-    Swal.fire({
-        icon: 'success',
-        html:
-            '<b>Cargando...</b><br/>'+
-            '<div class="spinner-border m-5" role="status">' +
-            '<span class="sr-only"></span></div>',
-        timer: 10000,
-        showConfirmButton: false,
-        allowOutsideClick: false
-    })
     getAllProducto();
 });
 
@@ -49,7 +39,18 @@ function getAllProducto() {
         type: "GET",
         url: "allProduct",
         data: {},
+        xhr: function() {
+            var xhr = $.ajaxSettings.xhr();
+            $("#cargando").modal("show")
+            xhr.upload.onprogress = function(e) {
+                if (e.lengthComputable) {
+                    $("#progresar").text("Por favor espere... " + parseInt((e.loaded / e.total) * 100))
+                }
+            };
+            return xhr;
+        },
         success: function (resp) {
+            $("#cargando").modal("hide")
             if (resp.length > 0) {
                 resp.map((e) => {
                     var card = `
@@ -98,7 +99,18 @@ function agregar(codigo){
             type: 'GET',
             url: 'getProduct/'+codigo,
             data:{},
+            xhr: function() {
+                var xhr = $.ajaxSettings.xhr();
+                $("#cargando").modal("show")
+                xhr.upload.onprogress = function(e) {
+                    if (e.lengthComputable) {
+                        $("#progresar").text("Por favor espere... " + parseInt((e.loaded / e.total) * 100))
+                    }
+                };
+                return xhr;
+            },
             success:function(resp){
+                $("#cargando").modal("hide")
                 var product = {
                     codigo: resp[0].codigo,
                     nombre: resp[0].nombre,
