@@ -33,7 +33,7 @@
                 <h2 class="card-title text-center">Carrito de Compras</h2>
                 <div class="row justify-content-center col-12 mt-3">
                     <div class="table-responsive-md">
-                        <table class="table">
+                        <table class="table table-sm table-dark">
                             <thead class="thead-dark">
                                 <tr>
                                     <th scope="col">#</th>
