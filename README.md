@@ -1,62 +1,86 @@
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
 
-## About Laravel
+### Descripción del proyecto 
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+El aplicativo es una tienda online donde el usuario puede realizar la compra de productos del sector textil, el cual cuenta con la variedad de productos por las categorias de Hombre, Mujer, Niños y Bebes. Además el usuario puede tener una visibilidad del estado de su pedido.
+Por parte del administrador, tiene funcionalidades de ver la cantidad del total de las ventas, tener un listado de todos sus productos, crear y editar un producto, eliminar un producto.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### Comandos
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+1. Para iniciar la aplicación en servidor local:
 
-## Learning Laravel
+    php artisan serve
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### Tecnologias
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+1. JavaScript
+2. HTML 5
+3. CSS
+4. Boostrap
+5. Laravel
+6. PHP 7
+7. JQuery
+8. MySQL Server
 
-## Laravel Sponsors
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+### Colaboradores
 
-### Premium Partners
+1. Jimmy Armando Chirivi Nivia
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/)**
-- **[OP.GG](https://op.gg)**
+## Modelo Entidad Relación
 
-## Contributing
+![image](https://user-images.githubusercontent.com/48265107/109167707-0c267980-774c-11eb-93d9-d40ab97c53d8.png)
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### Vistas 
 
-## Code of Conduct
+USUARIO:
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+1. Login 
 
-## Security Vulnerabilities
+![image](https://user-images.githubusercontent.com/48265107/109167842-311aec80-774c-11eb-970a-e17f9e68ec32.png)
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+2. Compra de productos:
 
-## License
+![image](https://user-images.githubusercontent.com/48265107/109168265-9ff84580-774c-11eb-9889-20ab363674ed.png)
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+3. Detalle de La Compra:
+
+![image](https://user-images.githubusercontent.com/48265107/109168696-11d08f00-774d-11eb-9d0c-bed12f57563f.png)
+
+4. Contactenos:
+
+![image](https://user-images.githubusercontent.com/48265107/109168806-2d3b9a00-774d-11eb-8992-9e07d30db57c.png)
+
+5. Pedidos Realizados 
+
+![image](https://user-images.githubusercontent.com/48265107/109168908-49d7d200-774d-11eb-920a-6854c2515e87.png)
+
+ADMINISTRADOR
+
+1. Dashboard
+
+![image](https://user-images.githubusercontent.com/48265107/109169625-fe71f380-774d-11eb-8200-7984c029b49b.png)
+
+2. Lista de productos 
+
+![image](https://user-images.githubusercontent.com/48265107/109169733-1f3a4900-774e-11eb-8a5f-7181be429dff.png)
+
+3. Crear Productos
+
+![image](https://user-images.githubusercontent.com/48265107/109169862-3da04480-774e-11eb-93bc-1804c9d01553.png)
+
+4. Editar Producto
+
+![image](https://user-images.githubusercontent.com/48265107/109170028-67f20200-774e-11eb-8375-af200dbd83cd.png)
+
+### Usuarios de Prueba
+
+Admistrador:
+  nickname: admin
+  password: admin2020
+
+Cliente:
+    nickname: jchiri
+    password: 1234
+
