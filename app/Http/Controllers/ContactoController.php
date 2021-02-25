@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Contacto;
+use Illuminate\Contracts\Mail\Mailable;
 use Illuminate\Http\Request;
+use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\MessaggeRecieved;
 
 class ContactoController extends Controller
 {
@@ -35,7 +39,15 @@ class ContactoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $contato = Contacto::create(array(
+            'nombres'=>$request->nombre,
+            'telefono'=>$request->telefono,
+            'correo'=>$request->correo,
+            'observacion'=>$request->observacion
+        ));
+        Mail::to('jimmychirivi09@gmail.com')->send(new MessaggeRecieved($contacto));
+
+        return array('ESTADO'=>"OK");
     }
 
     /**

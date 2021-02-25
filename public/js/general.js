@@ -32,14 +32,22 @@ function login() {
         },
         success: function (resp) {
             $("#cargando").modal("hide")
-            if (resp[resp.length - 1].ESTADO == "OK") {
+            if (resp.ESTADO == "OK") {
                 localStorage.setItem("session", 1);
-                localStorage.setItem("user",resp[0][0].nickname)
-                if (resp[0][0].nickname == "admin") {
+                localStorage.setItem("user",resp.DATA.nickname)
+                if (resp.DATA.nickname == "admin") {
                     location.href="/admin";
                 } else {
                     location.href="/";
                 }
+            }else{
+                Swal.fire({
+                    icon: "error",
+                    title: "Error",
+                    text: "Usuario o contraseña invalida o Usuario no existe",
+                    timer: 3000,
+                    showConfirmButton: false,
+                }); 
             }
         },
         error: function (XMLHttpRequest, textStatus, errorThrown) {

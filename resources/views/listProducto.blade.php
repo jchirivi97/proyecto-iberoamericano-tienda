@@ -28,7 +28,7 @@
                     <button class="btn btn-warning" onclick="crearProducto()">Crear Producto</button>
                 </div>
                 <div class="table-responsive-md">
-                    <table class="table">
+                    <table class="table table-sm table-dark">
                         <thead class="thead-dark">
                             <tr>
                                 <th scope="col">#</th>

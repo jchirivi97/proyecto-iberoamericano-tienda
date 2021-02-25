@@ -1,5 +1,7 @@
 $(window).on("load", function () {
-    if(localStorage.getItem("user") != null || localStorage.getItem("user") != ""){
+    if(localStorage.getItem("user") != null && localStorage.getItem("user") != ""){
+        
+        console.log("efsdfdsfsdfdsfsd")
         getAllCompras()
     }
 });

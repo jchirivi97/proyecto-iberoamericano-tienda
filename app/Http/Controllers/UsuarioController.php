@@ -32,8 +32,7 @@ class UsuarioController extends Controller
         $resp= array(Usuario::where([['nickname','=',$user],['password','=',$pass]])->get());
 
         if(sizeof($resp[0])>0){
-            array_push($resp,array("ESTADO"=>"OK"));
-            return $resp;
+            return array("ESTADO"=>"OK","DATA"=>$resp[0][0]);
         }else{
             return array("ESTADO"=>"FAIL");
         }
