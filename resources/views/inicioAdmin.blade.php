@@ -22,7 +22,7 @@
         <div class="card login mt-3 p-3">
             <div class="card-body row justify-content-center">
                 <h5 class="card-title text-center">DASHBOARD</h5>
-                <div class="card m-4" style="width: 18rem;">
+                <div class="card m-4" style="width: 23rem;">
                     <div class="card-body">
                         <h5 class="card-title col-12 text-center">TOTAL DE VENTAS AL DÍA</h5>
                         <h2 class="card-text text-center m-4"></h2>

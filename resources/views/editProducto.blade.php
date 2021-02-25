@@ -52,7 +52,8 @@
                         <textarea cols="100" rows="10" class="form-control" id="descripcion" name="descripcion" placeholder="Descripcion..."></textarea>
                     </div> 
                     <div class="col-12 m-2 text-center">
-                        <button type="button" class="btn btn-principal btn-sm" onclick="EditarProducto()">Editar</button>
+                        <button type="button" class="btn btn-principal btn-sm" onclick="EditarProducto()">Edita</button>
+                        <butto/listProd type="button" class="btn btn-danger btn-sm" onclick="location.href='/listProd'">Volver</button>
                     </div> 
                 </form>
             </div>
@@ -77,5 +78,6 @@
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<script src="js/general.js"></script>
 <script src="js/producto/editarProducto.js"></script>
 </html>

@@ -57,6 +57,7 @@
                     </div> 
                     <div class="col-12 m-2 text-center">
                         <button type="button" class="btn btn-principal btn-sm" onclick="saveProducto()">Crear</button>
+                        <button type="button" class="btn btn-danger btn-sm" onclick="location.href='/listProd'">Volver</button>
                     </div> 
                 </form>
             </div>
