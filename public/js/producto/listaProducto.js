@@ -91,7 +91,7 @@ function eliminar(id){
                     icon: 'success',
                     title: 'Exitoso',
                     text: 'Producto eliminado',
-                    timer: 1500
+                    timer: 2000
                 });
                 
                 location.reload();
@@ -99,10 +99,12 @@ function eliminar(id){
             }
         },
         error : function(XMLHttpRequest, textStatus, errorThrown) {
+            $("#cargando").modal("hide")
             Swal.fire({
                 icon: 'error',
                 title: 'Error',
-                text: 'El producto no existe'
+                text: 'El producto no es posible eliminarse debido a que tiene movimientos',
+                timer: 4000
               })
         }
     })

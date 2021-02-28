@@ -28,8 +28,27 @@
                         <h2 class="card-text text-center m-4"></h2>
                     </div>
                 </div>
+
+                <div class="table-responsive-md">
+                    <h3 class="text-center m-2">USUARIOS A CONTACTAR</h3>
+                    <table class="table table-sm table-dark">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Telefono</th>
+                                <th scope="col">Correo</th>
+                                <th scope="col">Peticion</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
+
     </main>
     <div class="modal" id="cargando" tabindex="-1" role="dialog" data-backdrop="static">
         <div class="modal-dialog" role="document">

@@ -25,7 +25,7 @@
         <div class="card contacto mt-5 p-3">
             <div class="card-body">
                 <h5 class="card-title text-center">CONTACTENOS</h5>
-                <form class="row justify-content-center">
+                <form id="contacto" class="row justify-content-center">
                     <div class="form-group col-12 m-2">
                         <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre Completo...">
                     </div>
@@ -39,7 +39,7 @@
                         <textarea cols="100" rows="10" class="form-control" id="observacion" name="observacion" placeholder="Observaciones..."></textarea>
                     </div>
                     <div class="col-12 m-2 text-center">
-                        <button class="btn btn-principal btn-sm">Enviar</button>
+                        <button type="button" class="btn btn-principal btn-sm" onclick="saveContacto()" >Enviar</button>
                     </div>
                 </form>
             </div>
@@ -62,6 +62,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <script src="js/general.js"></script>
-
+<script src="js/contato.js"></script>
 </html>

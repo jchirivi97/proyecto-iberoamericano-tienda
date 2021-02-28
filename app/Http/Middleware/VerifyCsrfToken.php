@@ -23,6 +23,8 @@ class VerifyCsrfToken extends Middleware
         '/saveDetalle',
         '/totalVentas',
         '/updProductCant',
-        '/getFacturaUser/{nickname}'
+        '/getFacturaUser/{nickname}',
+        '/saveContacto',
+        '/getAllContacto'
     ];
 }

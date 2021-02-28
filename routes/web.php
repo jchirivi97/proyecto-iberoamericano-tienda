@@ -73,5 +73,7 @@ Route::post('/saveFactura','App\Http\Controllers\FacturaController@store');
 Route::get('/totalVentas','App\Http\Controllers\FacturaController@getTotalVenta');
 Route::get('/getFacturaUser/{nickname}','App\Http\Controllers\FacturaController@getFacturaUser');
 Route::post('/saveDetalle','App\Http\Controllers\DetalleFactController@store');
+Route::post('/saveContacto','App\Http\Controllers\ContactoController@store');
+Route::get('/getAllContacto','App\Http\Controllers\ContactoController@getAll');
 
 

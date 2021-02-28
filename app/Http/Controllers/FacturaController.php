@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Factura;
 use App\Models\Producto;
+use App\Models\Usuario;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class FacturaController extends Controller
 {
@@ -45,6 +47,17 @@ class FacturaController extends Controller
                 'usuario'=>$request->usuario,
                 'estado'=>$request->estado
         ));
+        /*
+        $user= array(Usuario::where('nickname','=',$request->usuario)->get());
+
+        $mensaje = array('user'=>$user,'detalle'=>$resp);
+        var_dump($mensaje);
+        Mail::send('messageReceived',['mensaje'=>$mensaje],function($menssage) use ($mensaje){
+            $menssage->from('pruebalaravel2021@gmail.com','Notificacion');
+            $menssage->to($mensaje['user'][0]['correo']);
+            $menssage->subject('TIENDA ONLINE: Compra realizada');
+        });*/
+
         return $resp;
     }
 

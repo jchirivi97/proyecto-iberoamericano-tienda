@@ -49,6 +49,7 @@
                     <b>Cargando...</b><br />
                     <div class="spinner-border m-5" role="status">
                         <span class="sr-only"></span>
+                        <label id="progresar"></label>
                     </div>
                 </div>
             </div>

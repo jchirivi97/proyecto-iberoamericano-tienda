@@ -62,6 +62,7 @@
                   <th scope="col"># FACTURA</th>
                   <th scope="col">FECHA</th>
                   <th scope="col">VALOR</th>
+                  
                 </tr>
               </thead>
               <tbody>

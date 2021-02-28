@@ -25,6 +25,7 @@ function login() {
             $("#cargando").modal("show")
             xhr.upload.onprogress = function(e) {
                 if (e.lengthComputable) {
+                    console.log("hola")
                     $("#progresar").text("Por favor espere... " + parseInt((e.loaded / e.total) * 100))
                 }
             };
@@ -36,9 +37,9 @@ function login() {
                 localStorage.setItem("session", 1);
                 localStorage.setItem("user",resp.DATA.nickname)
                 if (resp.DATA.nickname == "admin") {
-                    location.href="/admin";
+                    //location.href="/admin";
                 } else {
-                    location.href="/";
+                    //location.href="/";
                 }
             }else{
                 Swal.fire({
@@ -51,6 +52,7 @@ function login() {
             }
         },
         error: function (XMLHttpRequest, textStatus, errorThrown) {
+            $("#cargando").modal("hide")
             Swal.fire({
                 icon: "error",
                 title: "Error",

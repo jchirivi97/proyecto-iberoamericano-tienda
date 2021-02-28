@@ -21,6 +21,12 @@ class ContactoController extends Controller
         //
     }
 
+
+    public function getAll(){
+        $resp = Contacto::all();
+        return $resp;
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -45,8 +51,6 @@ class ContactoController extends Controller
             'correo'=>$request->correo,
             'observacion'=>$request->observacion
         ));
-        Mail::to('jimmychirivi09@gmail.com')->send(new MessaggeRecieved($contacto));
-
         return array('ESTADO'=>"OK");
     }
 
